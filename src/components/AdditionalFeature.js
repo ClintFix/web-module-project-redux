@@ -5,7 +5,6 @@ import { addFeature } from '../actions'
  
 
 const AdditionalFeature = props => {
-  console.log('props', props)
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
@@ -16,7 +15,9 @@ const AdditionalFeature = props => {
 };
 
 const mapStateToProps = (state) => {
-  return { }
+  return { 
+    car: state.car,
+  }
 }
 
 export default connect(mapStateToProps, { addFeature })(AdditionalFeature);

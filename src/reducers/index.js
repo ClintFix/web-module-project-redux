@@ -1,5 +1,5 @@
 // TODO: ACTION IMPORTS //
-import { ADD_FEATURE } from '../actions'
+import { ADD_FEATURE, REMOVE_FEATURE } from '../actions'
 
 //* STEP 1: create initial state in reducer //
 const initialState = {
@@ -36,6 +36,18 @@ export const reducer = ( state = initialState, action ) => {
                     ]
                 }
             };
+
+        case REMOVE_FEATURE:
+            // console.log(action.payload)
+            // const newFeatureArr = state.car.features.filter((item) => item !== action.payload)
+            return {
+                ...state,
+                car: {
+                    ...state.car,
+                    features: state.car.features.filter((item) => item !== action.payload)
+                }
+            };
+
         default: 
             return state;
     }
