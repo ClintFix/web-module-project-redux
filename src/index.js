@@ -18,6 +18,6 @@ const rootElement = document.getElementById('root');
 //* STEP 5: Wrap App in Provider. React Router would be inside Provider
 ReactDOM.render(
     <Provider store={store}>
-            <App />
+        <App />
     </Provider>
 , rootElement);
