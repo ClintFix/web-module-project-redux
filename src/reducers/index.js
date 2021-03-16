@@ -1,4 +1,5 @@
 // TODO: ACTION IMPORTS //
+import { ADD_FEATURE } from '../actions'
 
 //* STEP 1: create initial state in reducer //
 const initialState = {
@@ -24,7 +25,17 @@ export const reducer = ( state = initialState, action ) => {
         // case statements go here
         // case EXAMPLE_CASE:
         //      return {}
-
+        case ADD_FEATURE: 
+            return {
+                ...state,
+                car: {
+                    ...state.car,
+                    features: [
+                        ...state.car.features,
+                        action.payload
+                    ]
+                }
+            };
         default: 
             return state;
     }
